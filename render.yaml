@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: newsbot
+    env: python
+    buildCommand: pip install requests beautifulsoup4
+    startCommand: python monitor.py
+    plan: free
