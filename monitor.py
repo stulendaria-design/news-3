@@ -9,7 +9,7 @@ import os
 # ==========================================
 
 BOT_TOKEN = "8955474803:AAGjIa1tOY8wmWyBY94KlQEEWnxzhSm3jPY"
-CHAT_ID = "-100" + "3904042886"  # для каналов нужен префикс -100
+CHAT_ID = "@Business_review_S"  # для каналов нужен префикс -100
 
 CHANNELS = [
     "buisness_ideal",
