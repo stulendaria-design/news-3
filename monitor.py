@@ -8,7 +8,7 @@ import os
 # НАСТРОЙКИ
 # ==========================================
 
-BOT_TOKEN = "8955474803:AAGjIa1tOY8wmWyBY94KlQEEWnxzhSm3jPY"
+BOT_TOKEN = "8955474803:AAFNkSGCbIfcJNt4r2BP420kjv4isYEZ_MA"
 CHAT_ID = "@Business_review_S"  # для каналов нужен префикс -100
 
 CHANNELS = [
