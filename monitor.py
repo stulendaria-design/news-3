@@ -26,6 +26,8 @@ CHANNELS = [
     "Theedinorogblog", "chiefinnovationchannel", "TheQubeVC", "news_spin",
     "voskhodvc", "rfoundersgoglobal", "karpovaventures", "startup_venture",
     "ask_vc", "vcnews", "disruptors_official", "sbmarketing", "TheInnovations",
+    # Новейшие каналы
+    "univertechpred", "skolkovoleaks", "skd_russia",
 ]
 
 KEYWORDS_COMPETITORS = [
@@ -328,8 +330,8 @@ def cmd_digest():
         sent += 1
         time.sleep(1)
 
-    save_digest([])
-    send_message(ADMIN_ID, f"✅ Дайджест опубликован! {sent} сообщений, {len(posts)} постов.")
+    # НЕ очищаем посты при ручном запросе — они войдут в пятничный дайджест тоже
+    send_message(ADMIN_ID, f"✅ Дайджест опубликован! {sent} сообщений, {len(posts)} постов.\n\n📌 Посты сохранены — войдут в пятничный дайджест тоже.")
 
 def cmd_channels():
     text = f"📡 <b>Мониторю {len(CHANNELS)} каналов:</b>\n\n"
@@ -588,6 +590,7 @@ def main():
 
         if should_send_digest():
             cmd_digest()
+            save_digest([])  # Очищаем только в пятницу
             save_json(LAST_DIGEST_FILE, {"date": now.strftime("%Y-%m-%d")})
 
         if should_send_stats():
